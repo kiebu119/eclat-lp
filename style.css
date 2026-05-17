@@ -813,10 +813,14 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
 
   /* Hero */
   .hero-content{
-    flex-direction:row;align-items:flex-end;
-    padding:160px 60px 80px;gap:60px;
+    flex-direction:row;
+    align-items:flex-end;
+    justify-content:flex-start;
+    padding:0 80px 80px;
+    height:100%;
+    gap:0;
   }
-  .hero-text{flex:1}
+  .hero-text{flex:0 0 50%;z-index:2;}
   .hero-img{
     position:absolute;
     right:0;
@@ -829,7 +833,7 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
   .hero-title{font-size:80px}
   .hero-ctas{flex-direction:row}
   .hero-label{font-size:11px;letter-spacing:.5em}
-  .hero-sub{font-size:18px}
+  .hero-sub{font-size:18px;color:rgba(253,252,251,.85);}
   .hero-desc{font-size:13px}
 
   /* Trust bar — PC横並び維持 */
