@@ -158,9 +158,9 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
 }
 .hero-img{
   position:absolute;
-  right:0;
-  top:20%;
-  width:38%;
+  right:-5%;
+  top:22%;
+  width:55%;
   opacity:1;
   transform:none;
   z-index:1;
@@ -288,8 +288,15 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
   border:.5px solid var(--border);
   text-align:center;
 }
-.problem-icon{
-  font-size:16px;color:var(--gold);margin-bottom:12px;
+.problem-img{
+  width:100%;height:160px;overflow:hidden;margin-bottom:16px;
+}
+.problem-img img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform .4s ease;
+}
+.problem-item:hover .problem-img img{
+  transform:scale(1.05);
 }
 .problem-item p{font-size:13px;line-height:1.7;color:var(--text-mid)}
 .problem-lead{
@@ -375,7 +382,55 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
   margin-bottom:48px;
 }
 
-/* ===== BENEFITS ===== */
+/* ===== INGREDIENTS TABLE ===== */
+.ing-table-wrap{
+  margin-top:64px;
+  border-top:.5px solid var(--border);
+  padding-top:48px;
+}
+.ing-product{
+  margin-bottom:32px;
+  text-align:center;
+}
+.ing-product img{
+  max-width:320px;
+  width:100%;
+  margin:0 auto;
+}
+.ing-table{
+  width:100%;border-collapse:collapse;
+  margin-bottom:24px;
+}
+.ing-table th{
+  font-family:var(--f-sans);font-size:9px;letter-spacing:.15em;
+  text-transform:uppercase;color:var(--gold);
+  border-bottom:1px solid var(--gold);
+  padding:12px 16px;text-align:left;
+  background:rgba(201,168,76,.05);
+}
+.ing-table td{
+  font-size:12px;color:var(--text-mid);
+  padding:14px 16px;
+  border-bottom:.5px solid var(--border-l);
+  line-height:1.6;
+}
+.ing-table tr:hover td{background:rgba(201,168,76,.03)}
+.ing-td-num{
+  font-family:var(--f-serif);font-size:16px;
+  color:var(--gold);font-weight:400;
+  white-space:nowrap;
+}
+.ing-note{
+  font-size:10px;color:var(--text-light);
+  line-height:2;border-top:.5px solid var(--border-l);
+  padding-top:16px;
+}
+
+@media(min-width:768px){
+  .ing-product img{max-width:400px}
+  .ing-table th{font-size:10px;padding:14px 20px}
+  .ing-table td{font-size:13px;padding:16px 20px}
+}
 .benefits-grid{display:flex;flex-direction:column;gap:40px}
 .benefits-img img{width:100%;border-radius:2px}
 .benefits-stats{display:flex;flex-direction:column;gap:0;margin-bottom:24px}
@@ -716,6 +771,17 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
 }
 .modal-close:hover{color:var(--gold);border-color:var(--gold)}
 
+/* ===== CHAR ANIMATION ===== */
+.char-anim{
+  opacity:0;
+  display:inline-block;
+  animation:charIn .5s var(--ease) forwards;
+}
+@keyframes charIn{
+  from{opacity:0;transform:translateY(16px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
 /* ===== FLOAT ANIMATION — 商品画像 ===== */
 @keyframes float {
   0%   { transform: translateY(0px); }
@@ -760,8 +826,11 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
     opacity:1;
     transform:translateY(-50%);
   }
-  .hero-title{font-size:64px}
+  .hero-title{font-size:80px}
   .hero-ctas{flex-direction:row}
+  .hero-label{font-size:11px;letter-spacing:.5em}
+  .hero-sub{font-size:18px}
+  .hero-desc{font-size:13px}
 
   /* Trust bar — PC横並び維持 */
   .trust-bar{
