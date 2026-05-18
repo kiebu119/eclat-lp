@@ -159,7 +159,7 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
 .hero-img{
   position:absolute;
   right:-5%;
-  top:20%;
+  top:30%;
   width:42%;
   opacity:1;
   transform:none;
