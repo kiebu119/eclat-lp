@@ -9,6 +9,37 @@ document.addEventListener('DOMContentLoaded', () => {
   // TODO: GASデプロイURL差し替え
   const GAS_URL = 'https://script.google.com/macros/s/AKfycbyiHqFnubC2l9-wYO33NvSgC8_DhmkExuUgy_jdTWdDW3SyUppVFmDF8qRFUHMx_2Mb5Q/exec';
 
+  /* ===== HERO TITLE CHAR ANIMATION ===== */
+  const heroTitle = document.querySelector('.hero-title');
+  if (heroTitle) {
+    const text1 = '内側から、';
+    const text2 = '輝きを。';
+    heroTitle.innerHTML = '';
+    let delay = 0.3;
+
+    [...text1].forEach(char => {
+      const span = document.createElement('span');
+      span.textContent = char;
+      span.className = 'char-anim';
+      span.style.animationDelay = delay + 's';
+      heroTitle.appendChild(span);
+      delay += 0.08;
+    });
+
+    heroTitle.appendChild(document.createElement('br'));
+
+    const em = document.createElement('em');
+    [...text2].forEach(char => {
+      const span = document.createElement('span');
+      span.textContent = char;
+      span.className = 'char-anim glow-char';
+      span.style.animationDelay = delay + 's';
+      em.appendChild(span);
+      delay += 0.08;
+    });
+    heroTitle.appendChild(em);
+  }
+
   /* ===== STICKY CTA BAR ===== */
   const stickyBar = document.getElementById('stickyBar');
   const hero = document.getElementById('hero');
